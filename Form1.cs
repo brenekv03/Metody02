@@ -38,10 +38,16 @@ namespace Metody02
         static private bool JeRostouci(double[] pole)
         {
             double prvniCislo = pole[0];
-            bool jeRostouci = true;
+            bool jeRostouci = false;
             for( int i = 0; i <pole.Length&&jeRostouci;i++)
             {
-                if (pole[i]>)
+                if(i>0)
+                {
+                    if (pole[i] > pole[i-1])
+                    {
+
+                    }
+                }
             }
         }
     }
