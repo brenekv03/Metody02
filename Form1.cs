@@ -19,6 +19,8 @@ namespace Metody02
 
         private void button1_Click(object sender, EventArgs e)
         {
+            double[] pole = new double[0];
+            UlozitDoPole(pole, textBox1);
 
         }
         static private void UlozitDoPole(double[] pole,TextBox textBox)
@@ -38,17 +40,15 @@ namespace Metody02
         static private bool JeRostouci(double[] pole)
         {
             double prvniCislo = pole[0];
-            bool jeRostouci = false;
+            bool jeRostouci = true;
             for( int i = 0; i <pole.Length&&jeRostouci;i++)
             {
-                if(i>0)
+                if(pole[i] < pole[i+1])
                 {
-                    if (pole[i] > pole[i-1])
-                    {
-
-                    }
+                    jeRostouci = false;
                 }
             }
+            return jeRostouci;
         }
     }
 }
