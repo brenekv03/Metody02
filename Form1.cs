@@ -16,10 +16,11 @@ namespace Metody02
         {
             InitializeComponent();
         }
+        double[] pole;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double[] pole = new double[0];
+            pole = new double[textBox1.Lines.Length];
             UlozitDoPole(pole, textBox1);
 
         }
@@ -43,12 +44,24 @@ namespace Metody02
             bool jeRostouci = true;
             for( int i = 0; i <pole.Length&&jeRostouci;i++)
             {
-                if(pole[i] < pole[i+1])
+                if(pole[i] > pole[i+1])
                 {
                     jeRostouci = false;
                 }
             }
             return jeRostouci;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ZobrazitPole(pole, listBox1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (JeRostouci(pole)) MessageBox.Show("Pole je rostoucí");
+            else MessageBox.Show("Neroste");
+
         }
     }
 }
